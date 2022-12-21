@@ -37,8 +37,6 @@ def loginDr():
         
          
         
-        
-        
         return render_template('doctorsaddorview.html',data=r)
     else :
       return render_template('doctorslogin.html')    
