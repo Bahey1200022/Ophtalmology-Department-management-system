@@ -10,10 +10,10 @@
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> -->
 
-    <link rel="stylesheet" href="css/drlogin.css">
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
 
 <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -72,7 +72,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="css/drlogin.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}">
   </head>
 
   <body class="text-center">
@@ -80,16 +80,16 @@
   <a href="p1.html" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
 </nav>
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form action ="http://127.0.0.1:5000/loginDr" method ="POST">
     <!-- <img class="mb-4" src="gg.png" alt="" width="72" height="57"> -->
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="x" >
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name ="y">
       <label for="floatingPassword">Password</label>
     </div>
 

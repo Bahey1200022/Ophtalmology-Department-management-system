@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home page</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/p1.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
 </head>
 <body>
      <!--upper bar-->
  <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-  <a href="p1.html" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+  <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
   <button
    type="button" data-toggle="collapse" 
    data-target="#navbarnav" 
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-            <img src="gg.png" class="img-fluid" alt="Responsive image">
+            <img src="{{ url_for('static',filename='gg.png') }}" class="img-fluid" alt="Responsive image">
                       
         </div>
        <!-- <div class="col-lg-2">
@@ -232,12 +232,13 @@
 
 
 
+  
+  <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery-3.6.2.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
 
 
 
-
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery-3.6.2.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    
 </body>
 </html>
