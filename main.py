@@ -47,8 +47,24 @@ def loginPt():
 
 
 @app.route('/SignUpPt',methods =['POST','GET'])
-def SignUpPt():  
-  return render_template('SignUpPt.html')
+def SignUpPt():
+  if request.method =='POST':
+    Fname=request.form['Patient_FName']
+    lname=request.form['Patient_LName']
+    mob=request.form['Patient_Mobile']
+    pbd=request.form['Patient_BirthDay']
+    pemail=request.form['Patient_Email']
+    Ppassword=request.form['Patient_Password']
+    Ppass2=request.form['Patient_Password_ReEntered']
+    disease=request.form['Patient_Diseases']
+    fileP=request.form['Patient_Data']
+    if Ppassword !=Ppass2:
+      return render_template('SignUpPt.html')
+    else:
+      return render_template('Patient.html')
+    
+  else:  
+    return render_template('SignUpPt.html')
 
 if __name__=='__main__':
     app.run()
