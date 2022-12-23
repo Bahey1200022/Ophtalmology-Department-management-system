@@ -6,12 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Doctors only</title>
+    <title>Patients SignUp</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> -->
 
     
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
 
@@ -68,6 +68,7 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
     </style>
 
     
@@ -77,28 +78,72 @@
 
   <body class="text-center">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-  <a href="p1.html" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+  <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
 </nav>
 <main class="form-signin w-100 m-auto">
-  <form action ="http://127.0.0.1:5000/loginDr" method ="POST">
+  <form action ="http://127.0.0.1:5000/SignUpPt" method ="POST">
     <!-- <img class="mb-4" src="gg.png" alt="" width="72" height="57"> -->
-    <h1 class="h3 mb-3 fw-normal">Doctor Login</h1>
+    <h1 class="h3 mb-3 fw-normal mt-5"><b>Patient Sign-Up</b></h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="x" >
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name ="y">
-      <label for="floatingPassword">Password</label>
+       
+      <input type="First Name" class="form-control mt-2" id="First Name" placeholder="First Name" name ="Patient_First_Name">
+
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+    <div class="form-floating">
+       
+      <input type="Last Name" class="form-control mt-2" id="Last Name" placeholder="Last Name" name ="Patient_Last_Name">
+
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <div class="form-floating">
+        
+      <input type="Mobile" class="form-control mt-2" id="Mobile" placeholder="Mobile Number" name ="Patient_Mobile_Number">
+
+    </div>
+
+    <div class="form-floating">
+        <input type="date" class="form-control mt-2"   name="Patient_BirthDay" >
+        
+    </div>
+    
+    <div class="form-floating">
+      <input type="email" class="form-control mt-2" id="floatingInput" placeholder="name@example.com" name="Patient_Email" >
+      
+    </div>
+    
+    <div class="form-floating">
+       
+      <input type="password" class="form-control " id="floatingPassword" placeholder="Password" name ="Patient_Password">
+
+    </div>
+    <div class="form-floating">
+        
+      <input type="password" class="form-control " id="floatingPassword" placeholder="Re-Enter Password" name ="Patient_Password_ReEntered">
+
+    </div>
+    <div class="form-floating">
+      Do you have any chronic diseases?
+      <input type="" class="form-control " id="diseases" placeholder="Diabetes,Cataract,...etc" name ="Patient_Diseases">
+
+    </div>
+
+    <div class="form-floating ">
+      
+      Please Upload Your Medical Records
+      <input type="file" class="form-control "  name="Patient_Data"  >
+        
+    </div>
+    
+
+  
+    <button class="w-100 btn btn-lg btn-success mt-2" type="submit">Sign-Up</button> 
+    
+    <!-- <button class="w-100 btn btn-lg btn-primary mt-2" href="/loginPt" type="submit" >Login</button>  -->
+    <div class="_8e4l mbl _6o _6s _mf mt-2">Already Have Account? </div>
+    <a role="button" class="w-100 btn btn-lg btn-primary mt-2" href="/loginPt" type="submit" >Login</a>
+    
+
     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p> -->
   </form>
 </main>

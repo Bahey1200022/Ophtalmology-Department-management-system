@@ -6,12 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Doctors only</title>
+    <title>Patients Login</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> -->
 
     
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
 
@@ -77,20 +77,21 @@
 
   <body class="text-center">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-  <a href="p1.html" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+  <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
 </nav>
 <main class="form-signin w-100 m-auto">
-  <form action ="http://127.0.0.1:5000/loginDr" method ="POST">
+  <form action ="http://127.0.0.1:5000/loginPt" method ="POST">
     <!-- <img class="mb-4" src="gg.png" alt="" width="72" height="57"> -->
-    <h1 class="h3 mb-3 fw-normal">Doctor Login</h1>
+    <h1 class="h3 mb-3 fw-normal"><b>Patient Login</b> </h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="x" >
-      <label for="floatingInput">Email address</label>
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="Patient_Email" >
+      <!-- <label for="floatingInput">Email address</label> -->
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name ="y">
-      <label for="floatingPassword">Password</label>
+        <!-- <label for="floatingPassword">Password</label>   -->
+      <input type="password" class="form-control mt-2" id="floatingPassword" placeholder="Password" name ="Patient_Password">
+
     </div>
 
     <div class="checkbox mb-3">
@@ -98,7 +99,13 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login in</button> 
+    
+    <a role="button" class="w-100 btn btn-lg btn-success mt-2" href="/SignUpPt" type="submit" >Sign-Up</a>
+    <!-- <button class="w-100 btn btn-lg btn-success mt-2" type="button" >Sign Up</button>
+    <a href="/SignUpPt"></a>
+     -->
+
     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p> -->
   </form>
 </main>

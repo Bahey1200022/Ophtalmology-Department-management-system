@@ -41,7 +41,14 @@ def loginDr():
     else :
       return render_template('doctorslogin.html')    
         
+@app.route('/loginPt',methods =['POST','GET'])
+def loginPt():  
+  return render_template('Patient.html') 
 
+
+@app.route('/SignUpPt',methods =['POST','GET'])
+def SignUpPt():  
+  return render_template('SignUpPt.html')
 
 if __name__=='__main__':
     app.run()
