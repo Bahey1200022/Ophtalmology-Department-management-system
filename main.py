@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, url_for, redirect, session
 import mysql.connector
-
+import time 
 
 
 
@@ -42,7 +42,19 @@ def loginDr():
       return render_template('doctorslogin.html')    
         
 @app.route('/loginPt',methods =['POST','GET'])
-def loginPt():  
+def loginPt():
+  if request.method =='POST':
+        n=request.form['Patient_Email']
+        d=request.form['Patient_Password']
+        sql="SELECT * FROM patients WHERE (email=%s AND passpatient =%s)"
+        val=(n,d)
+        mycursor.execute(sql, val)
+        r=mycursor.fetchone()
+        if r==None:
+          return render_template('Patient.html')
+        else :
+          return render_template('appointment.html',data=r)
+          
   return render_template('Patient.html') 
 
 
@@ -58,9 +70,17 @@ def SignUpPt():
     Ppass2=request.form['Patient_Password_ReEntered']
     disease=request.form['Patient_Diseases']
     fileP=request.form['Patient_Data']
-    if Ppassword !=Ppass2:
-      return render_template('SignUpPt.html')
+    ephone=request.form['Patientrelative_Mobile']
+    insurance=request.form['insurance']
+    gender =request.form['gender']
+    address=request.form['ad']
+    if Fname =="" or lname=="" or pemail=="" or mob=="" or Ppass2=="" or Ppassword=="" or gender=="" or Ppassword !=Ppass2:
+        return render_template('SignUpPt.html')
     else:
+      sql1="INSERT INTO patients(PFname,PLname,Mnum,Enum,Sex,DOT,Address,email,passpatient,insuranceN,diseases,MR) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+      val1=(Fname,lname,mob,ephone,gender,pbd,address,pemail,Ppassword,insurance,disease,fileP)
+      mycursor.execute(sql1, val1)
+      mydb.commit()
       return render_template('Patient.html')
     
   else:  
