@@ -19,8 +19,8 @@ def home():
    return render_template('p1.html')
  
 
-   #5
-
+   
+   #########################################################################
 @app.route('/loginDr',methods =['POST','GET'])
 def loginDr():
     if request.method =='POST':
@@ -40,7 +40,7 @@ def loginDr():
         return render_template('doctorsaddorview.html',data=r)
     else :
       return render_template('doctorslogin.html')    
-        
+     #########################################################################################################################################   
 @app.route('/loginPt',methods =['POST','GET'])
 def loginPt():
   if request.method =='POST':
@@ -57,7 +57,7 @@ def loginPt():
           
   return render_template('Patient.html') 
 
-
+###############################################################################################################################################
 @app.route('/SignUpPt',methods =['POST','GET'])
 def SignUpPt():
   if request.method =='POST':
@@ -85,6 +85,6 @@ def SignUpPt():
     
   else:  
     return render_template('SignUpPt.html')
-
+###############################################################################################################################################################################
 if __name__=='__main__':
     app.run()
