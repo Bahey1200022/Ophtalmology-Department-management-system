@@ -49,11 +49,18 @@ def loginPt():
         sql="SELECT * FROM patients WHERE (email=%s AND passpatient =%s)"
         val=(n,d)
         mycursor.execute(sql, val)
-        r=mycursor.fetchone()
-        if r==None:
+        f=mycursor.fetchone()
+        sql1="select* from doctor_availability"
+        mycursor.execute(sql1)
+  
+        
+        #rowheaders=[x[0] for x in mycursor.description ]
+        r=mycursor.fetchall()
+        data={'rec':r,'patient':f}
+        if f==None:
           return render_template('Patient.html')
         else :
-          return render_template('appointment.html',data=r)
+          return render_template('appointment.html',msg=data)
           
   return render_template('Patient.html') 
 
@@ -87,13 +94,14 @@ def SignUpPt():
     return render_template('SignUpPt.html')
 ###############################################################################################################################################################################
 
-@app.route('/book_an_appointment')
-def appoint():
-    sql="select* from doctor_availability"
-    mycursor.execute(sql)
+# @app.route('/book_an_appointment')
+# def appoint():
+#     sql="select* from doctor_availability"
+#     mycursor.execute(sql)
     
-    r=mycursor.fetchall()
-    return render_template('appointment.html',data=r)
+#     r=mycursor.fetchall()
+#     sql1 =
+#     return render_template('appointment.html')
   
   
 

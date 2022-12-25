@@ -4,7 +4,7 @@
         <title>Book an appointment</title>
     </head>
     <body>
-        
+        welcome {{msg['patient'][0]}}
         <table>
             <tr>
                 <th>Doctor</th>
@@ -12,7 +12,7 @@
                 <th>Speciality</th>
 
             </tr>
-            {% for d in data%}
+            {% for d in msg['rec']%}
             <tr>
                 <td>{{d.0}}</td>
                 <td>{{d.1}}</td>
