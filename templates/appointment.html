@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome</title>
+        <title>Book an appointment</title>
     </head>
     <body>
-        {{data}}
+        
+        <table>
+            <tr>
+                <th>Doctor</th>
+                <th>available on</th>
+                <th>Speciality</th>
+
+            </tr>
+            {% for d in data%}
+            <tr>
+                <td>{{d.0}}</td>
+                <td>{{d.1}}</td>
+                <td>{{d.2}}</td>
+            </tr>
+               {% endfor %}
+        </table>
+
     </body>
 </html>

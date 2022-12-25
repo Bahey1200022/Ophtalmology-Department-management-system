@@ -86,5 +86,16 @@ def SignUpPt():
   else:  
     return render_template('SignUpPt.html')
 ###############################################################################################################################################################################
+
+@app.route('/book_an_appointment')
+def appoint():
+    sql="select* from doctor_availability"
+    mycursor.execute(sql)
+    
+    r=mycursor.fetchall()
+    return render_template('appointment.html',data=r)
+  
+  
+
 if __name__=='__main__':
     app.run()
