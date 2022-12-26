@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
     <head>
         <title>Book an appointment</title>
-    </head>
-    <body>
-        welcome {{msg['patient'][0]}}
-        <table>
-            <tr>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
+  <style>
+    .t{
+        position:relative;
+        top:70px;
+    }
+  </style>
+       </head>
+      <body>
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+            <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+          </nav>
+         
+             <table class="t">
+              <tr>
                 <th>Doctor</th>
                 <th>available on</th>
                 <th>Speciality</th>
@@ -19,7 +31,7 @@
                 <td>{{d.2}}</td>
             </tr>
                {% endfor %}
-        </table>
-
+        
+    </main>
     </body>
 </html>
