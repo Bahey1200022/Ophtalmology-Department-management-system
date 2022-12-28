@@ -6,10 +6,14 @@
         <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
   <style>
-    .t{
+    .table{
         position:relative;
-        top:70px;
+        top:40px;
     }
+    .f{
+      position:relative;
+        top:100px;
+    
   </style>
        </head>
       <body>
@@ -17,21 +21,33 @@
             <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
           </nav>
          
-             <table class="t">
+          <table class="table">
+            <thead class="thead-dark">
               <tr>
-                <th>Doctor</th>
-                <th>available on</th>
-                <th>Speciality</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">available on</th>
+                <th scope="col">Speciality</th>
 
             </tr>
+          </thead>
+          <tbody>
             {% for d in msg['rec']%}
             <tr>
                 <td>{{d.0}}</td>
                 <td>{{d.1}}</td>
                 <td>{{d.2}}</td>
             </tr>
-               {% endfor %}
+            {% endfor %}
+        </tbody>
+      </table>
+               
         
-    </main>
+    
+<form class="f"  action ="http://127.0.0.1:5000/BOOK" method ="POST">>
+<input type="text" placeholder="date_of_app" name ="date">
+<input type="text" placeholder="dr" name ="doctor">
+<button class="w-100 btn btn-lg btn-primary" type="submit">reserve</button> 
+</form>
+</main>
     </body>
 </html>

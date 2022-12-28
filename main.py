@@ -1,10 +1,14 @@
 from flask import Flask, render_template, flash, request, url_for, redirect, session
 import mysql.connector
-import time 
+from flask_session import Session
 
 
 
 app=Flask(__name__, static_url_path='/static')
+
+app.config["SESSION_PERMANENT"]=False
+app.config["SESSION_TYPE"]="filesystem"
+Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -56,11 +60,18 @@ def loginPt():
         
         #rowheaders=[x[0] for x in mycursor.description ]
         r=mycursor.fetchall()
-        data={'rec':r,'patient':f}
+        data1={"rec":r,"patient":f}
+        session['p']=f
+        # x=request.form['doctor']
+        # y=request.form['date']
+        # sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid)Values(%s,%s,%s,%s,%s)"
+        # val3=(f[0],y,x,f[1],f[2])
+        # mycursor.execute(sql3, val3)
+        # mydb.commit()
         if f==None:
           return render_template('Patient.html')
         else :
-          return render_template('appointment.html',msg=data)
+          return render_template('appointment.html',msg=data1)
           
   return render_template('Patient.html') 
 
@@ -94,15 +105,22 @@ def SignUpPt():
     return render_template('SignUpPt.html')
 ###############################################################################################################################################################################
 
-# @app.route('/book_an_appointment')
-# def appoint():
-#     sql="select* from doctor_availability"
-#     mycursor.execute(sql)
-    
-#     r=mycursor.fetchall()
-#     sql1 =
-#     return render_template('appointment.html')
-  
+@app.route('/BOOK',methods =['POST','GET'])
+def appoint():
+    f=session.get('p',None)
+    if request.method =='POST':
+      f=session.get('p',None)
+      x=request.form['doctor']
+      y=request.form['date']
+      sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid)Values(%s,%s,%s,%s,%s)"
+      val3=(f[0],y,x,f[1],f[2])
+      mycursor.execute(sql3, val3)
+      mydb.commit()
+      return render_template('p1.html')
+    else:
+      return render_template('aboutus.html')
+        
+        
   
 
 if __name__=='__main__':
