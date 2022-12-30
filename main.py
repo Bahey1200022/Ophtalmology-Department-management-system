@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
@@ -121,7 +121,15 @@ def appoint():
       return render_template('aboutus.html')
         
         
-  
+@app.route('/aboutus')
+def aboutuss():
+   return render_template('aboutus.html')
+ 
+ 
+@app.route('/doctors')
+def doctorss():
+   return render_template('Doctors.html')
+
 
 if __name__=='__main__':
     app.run()

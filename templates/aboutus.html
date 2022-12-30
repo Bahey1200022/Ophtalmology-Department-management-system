@@ -6,11 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
   </head>
   <body>
+    <!--{ %extends "p1.html"% }
+ {% block body%}
+ <p> yady el 2araf </p>
+ {% end body%}-->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+  <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+  <button
+   type="button" data-toggle="collapse" 
+   data-target="#navbarnav" 
+   class="navbar-toggler" 
+   aria-controls="navbarnav" 
+   aria-expanded="false" aria-label="toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarnav">
+     <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="aboutus.html">About us</a></li>
+                <li><a class="dropdown-item" href="#">prices</a></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Our Team</a></li>
+              </ul>
     
-HI
+        </li>
+        <li class="nav-item active">
+            <a href="#" class="nav-link">Contact us</a>
+        </li>
+        <li class="nav-item active">
+            <a href="#" class="nav-link">Doctors</a>
+        </li>
+        <li class="nav-item active">
+            <a href="#" class="nav-link">services</a>
+        </li>
+        <li class="nav-item active">
+            <a href="complaints.html" class="nav-link">for complaints</a>
+        </li>
+     </ul>
+    </div>
+ </nav>  
 
 
 
