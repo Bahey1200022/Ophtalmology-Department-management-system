@@ -1,9 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
     <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        {{data}}
+        <title>appointments</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
+  <style>
+    .table{
+        position:relative;
+        top:40px;
+    }
+    .f{
+      position:relative;
+        top:100px;
+    }
+  </style>
+       </head>
+      <body>
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+            <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+          </nav>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">patientFname</th>
+                <th scope="col">PatientLname</th>
+                <th scope="col">Adate</th>
+                <th scope="col">Pid</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in data["p"]%}
+            <tr>
+                <td>{{d.0}}</td>
+                <td>{{d.1}}</td>
+                <td>{{d.2}}</td>
+                <td>{{d.3}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+         
+
+</main>
     </body>
 </html>
