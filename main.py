@@ -24,7 +24,7 @@ def home():
  
 
    
-   #########################################################################
+   ############################################################################################################################################################3
 @app.route('/loginDr',methods =['POST','GET'])
 def loginDr():
     if request.method =='POST':
@@ -36,15 +36,19 @@ def loginDr():
         r=mycursor.fetchone()
         if r==None:
           return render_template('doctorslogin.html')
-          
-        
+        k=r[1]
+        sql12 ="SELECT patientFname,PatientLname,Adate,Pid FROM appointments WHERE (Doctor =%s)"
+        val12=[k]
+        mycursor.execute(sql12, val12)
+        patients=mycursor.fetchall()
+        dr={"drname":k,"p":patients}
         
          
         
-        return render_template('doctorsaddorview.html',data=r)
+        return render_template('doctorsaddorview.html',data=dr)
     else :
       return render_template('doctorslogin.html')    
-     #########################################################################################################################################   
+     #########################################################################################################################################  ################################################# 
 @app.route('/loginPt',methods =['POST','GET'])
 def loginPt():
   if request.method =='POST':
@@ -105,7 +109,7 @@ def SignUpPt():
     return render_template('SignUpPt.html')
 ###############################################################################################################################################################################
 
-@app.route('/BOOK',methods =['POST','GET'])
+@app.route('/booking_successful',methods =['POST','GET'])
 def appoint():
     f=session.get('p',None)
     if request.method =='POST':
@@ -120,15 +124,23 @@ def appoint():
     else:
       return render_template('aboutus.html')
         
-        
+##################################################################################################################################################        
 @app.route('/aboutus')
 def aboutuss():
    return render_template('aboutus.html')
  
- 
+################################################################################################################################################################################333 
 @app.route('/doctors')
 def doctorss():
-   return render_template('Doctors.html')
+   return render_template('Doctors.html')  
+###################################################################################################################################################################
+
+@app.route('/complaints')
+def complaints():
+  return render_template('complaints.html')
+
+
+
 
 
 if __name__=='__main__':
