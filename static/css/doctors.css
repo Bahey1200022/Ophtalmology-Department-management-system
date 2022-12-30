@@ -1,0 +1,35 @@
+
+body { 
+    padding-top: 100px; 
+  }
+  .navbar-brand
+  {
+    font-size: 60px;
+    font-style: oblique;
+  }
+  
+  .navbar-nav{
+      font-size: 20px;
+  }
+  .navbar-nav > li{
+      padding-left:30px;
+      padding-right:30px;
+  }
+  .navbar{
+      background: linear-gradient(to top left, #003366 32%, #336699 68%);
+  }
+  
+  .text{
+      font-size:60px;
+  }
+
+  
+
+footer{
+    background: linear-gradient(to top left, #003366 32%, #336699 68%);
+}
+.text{
+    color:#003366 ;
+   font-weight: 500;
+   font-size:40px;
+}
