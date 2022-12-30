@@ -137,7 +137,7 @@ def doctorss():
 
 @app.route('/complaints')
 def complaints():
-  return render_template('complaints')
+  return render_template('complaints.html')
 
 
 
