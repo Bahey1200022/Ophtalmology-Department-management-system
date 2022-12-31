@@ -6,7 +6,7 @@
     <title>Home page</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/doctors.css') }}"
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/doctors.css') }}">
 
 </head>
 <style>
@@ -37,7 +37,7 @@
           <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Home</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="\aboutus">About us</a></li>
+                  <li><a class="dropdown-item" href="/aboutus">About us</a></li>
                   <li><a class="dropdown-item" href="#">prices</a></li>
                   <li><a class="dropdown-item" href="#">FAQ</a></li>
                   <li><a class="dropdown-item" href="#">Our Team</a></li>
@@ -54,7 +54,7 @@
               <a href="#" class="nav-link">services</a>
           </li>
           <li class="nav-item active">
-              <a href="complaints" class="nav-link">for complaints</a>
+              <a href="/complaints" class="nav-link">for complaints</a>
           </li>
        </ul>
       </div>
@@ -72,7 +72,7 @@
         <p class="card-text"> specialist in Ophthalmology </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted"></small>
+        <small class="text-muted">Sunday 9am-5pm</small>
       </div>
     </div>
     <div class="card">
@@ -82,7 +82,7 @@
         <p class="card-text">Cataract Specialist </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted"></small>
+        <small class="text-muted">Monday 9am-2pm</small>
       </div>
     </div>
     <div class="card">
@@ -92,7 +92,7 @@
         <p class="card-text">Keratoconus Specialist </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted"></small>
+        <small class="text-muted">Tuesday 2pm-6pm</small>
       </div>
     </div>
   </div>
@@ -105,17 +105,17 @@
           <p class="card-text">Anaesthesist</p>
         </div>
         <div class="card-footer">
-          <small class="text-muted"></small>
+          <small class="text-muted">Thursday 8am-5pm</small>
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="{{ url_for('static',filename='bahaa.jpg')}}" alt="Card image cap">
         <div class="card-body">
-          <h2 class="card-title">Dr.Bryce bahaa</h2>
+          <h2 class="card-title">Dr.Ali bahaa</h2>
           <p class="card-text">Specialist in Ophthalmology </p>
         </div>
         <div class="card-footer">
-          <small class=""></small>
+          <small class="">Friday 8am-12pm</small>
         </div>
       </div>
       <div class="card">
@@ -125,7 +125,7 @@
           <p class="card-text">Specialist in Ophthalmology </p>
         </div>
         <div class="card-footer">
-          <small class=""></small>
+          <small class="">Saturday 9am-5pm</small>
         </div>
       </div>
   </div>
