@@ -135,13 +135,27 @@ def doctorss():
    return render_template('Doctors.html')  
 ###################################################################################################################################################################
 
-@app.route('/complaints')
+@app.route('/complaints',methods =['POST','GET'])
 def complaints():
-  return render_template('complaints.html')
+  if request.method =='POST':
+    email=request.form['email']
+    passw=request.form['passw']
+    complaint=request.form['text']
+    sql="Select PFname,PLname,PID from patients WHERE(email=%s AND passpatient=%s)"
+    val=(email,passw)
+    mycursor.execute(sql, val)
+    p=mycursor.fetchone()
+    sql2="INSERT INTO complaints(Complaint,PatientID,Pfname,Plname)Values(%s,%s,%s,%s)"
+    val2=(complaint,p[2],p[0],p[1])
+    mycursor.execute(sql2, val2)
+    mydb.commit()
+    return render_template('p1.html')
+  else :
+    return render_template('complaints.html')
 
-
+###########################################################################################################################################################################3
 
 
 
 if __name__=='__main__':
-    app.run()
+    app.run(debug=True)

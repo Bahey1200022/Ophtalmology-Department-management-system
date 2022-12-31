@@ -55,7 +55,7 @@ form {
     </style>
 </head>
 <body>
- <!--navbar-->
+ 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
     <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
     <button
@@ -94,19 +94,19 @@ form {
       </div>
    </nav> 
    <br>
-   <!--form-->
-   <form>
+   
+   <form action ="http://127.0.0.1:5000/complaints" method ="POST">
     <div class="container">
     <div class="form-group row">
       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" input required>
       </div>
     </div>
     <div class="form-group row">
       <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="passw" input required>
       </div>
     </div>
     <fieldset class="form-group ">
@@ -130,7 +130,7 @@ form {
     </fieldset>
     <fieldset class="form-group">
       <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Overall satisfaction? ( Doctor's knowlegde/ waiting time/ Hygiene)</legend>
+        <legend class="col-form-label col-sm-2 pt-0">Overall satisfaction? : Doctor's knowlegde/ waiting time/ Hygiene</legend>
         <div class="col-sm-10">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
@@ -155,18 +155,18 @@ form {
     </fieldset>
     <div class="form-group ">
       <label for="exampleFormControlTextarea1">What else would you like to see added to your services?</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text" input required></textarea>
     </div>
     <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit"  class="btn btn-primary">Submit</button>
       </div>
     </div>
   </form>
 </div>
 
 <br>
-    <!--footer-->
+    
     <footer class="text-white text-center text-lg-start bg-primary" style="background: linear-gradient(to top left, #003366 32%, #336699 68%)">
       <div class="container p-4">
         <div class="row mt-4">
@@ -212,9 +212,7 @@ form {
               </li>
             </ul>
           </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
+          
           <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase mb-4">Opening hours</h5>
     
@@ -235,13 +233,11 @@ form {
               </tbody>
             </table>
           </div>
-          <!--Grid column-->
+          
         </div>
-        <!--Grid row-->
+        
       </div>
-      <!-- Grid container -->
-    
-      <!-- Copyright -->
+      
       <div class="text-center p-3" style="background: linear-gradient(to top left, #003366 32%, #336699 68%);">
         
       </div>
