@@ -33,13 +33,13 @@
     
         </li>
         <li class="nav-item active">
-            <a href="#" class="nav-link">Contact us</a>
+            <a href="/contactus" class="nav-link">Contact us</a>
         </li>
         <li class="nav-item active">
             <a href="/doctors" class="nav-link">Doctors</a>
         </li>
         <li class="nav-item active">
-            <a href="#" class="nav-link">services</a>
+            <a href="#fat" class="nav-link">services</a>
         </li>
         <li class="nav-item active">
             <a href="/complaints" class="nav-link">for complaints</a>
@@ -79,7 +79,7 @@
     <div class="card-deck">
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Doctors & Healthcare Professionals </h2>
+        <h3 class="card-title">Doctors & Healthcare Professionals </h3>
         <p class="card-text">our team of Eye Doctors, From a routine eye exam to LASIK we have a Doctor that can help.</p>
         <a href="/loginDr" class="btn btn-primary">click Here!</a>
         <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
@@ -87,7 +87,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Patients</h2>
+        <h3 class="card-title">Patients</h3>
         <p class="card-text">Looking For Consultation? Consult with your own healthcare specialist, wherever you are</p>
         <a href="/SignUpPt" class="btn btn-primary">click Here!</a>
         <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
@@ -96,7 +96,7 @@
     <div class="card">
       
       <div class="card-body">
-        <h2 class="card-title">Hospital</h2>
+        <h3 class="card-title">Hospital</h3>
         <p class="card-text">Get basics solution for the daily life problems and soother experience of the eye related queries by experts.</p>
         <a href="#" class="btn btn-primary">click Here!</a>
         <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
@@ -104,6 +104,74 @@
     </div>
   </div>
 </div>
+<br>
+<!--services-->
+<div class = "container">
+  <h1 id="fat"> Every Body Deserves to see the world clearly! </h1>
+  <h1 class="text"> Our Eye Care Services: </h1><br>
+  <!--first row-->
+  <div class="row">
+    <div class="col-lg-4">
+  <h3>Eye Exams</h3>
+  <figure class = "figure">
+     <img src = "{{ url_for('static',filename='ll.jpg') }}" 
+        class = "figure-img img-fluid rounded" alt = "Figure Element" 
+        height = "200" width = "300">
+     <figcaption class = "figure-caption">We are equipped with the latest technologies that help for the eye sight exams.</figcaption>
+  </figure>
+    </div>
+    <div class="col-lg-4">
+  <h3>Retina Repair</h3>
+  <figure class = "figure">
+     <img src = "{{ url_for('static',filename='1.jpg') }}" 
+        class = "figure-img img-fluid rounded" alt = "Figure Element" 
+        height = "200" width = "300">
+     <figcaption class = "figure-caption">very effective and safe!</figcaption>
+  </figure>
+  </div>
+   <div class="col-lg-4">
+  <h3>Dry Eye Surgery</h3>
+  <figure class = "figure">
+     <img src = "{{ url_for('static',filename='2.jpg') }}" 
+        class = "figure-img img-fluid rounded" alt = "Figure Element" 
+        height = "200" width = "300">
+     <figcaption class = "figure-caption">Is the safest & most effective procedure that’s ever existed ophthalmology</figcaption>
+  </figure>
+  </div>
+  </div>
+  <!--second row-->
+  <div class="row">
+    <div class="col-lg-4">
+  <h3>Laser Eye Surgery</h3>
+  <figure class = "figure">
+     <img src = "{{ url_for('static',filename='3.jpg') }}" 
+        class = "figure-img img-fluid rounded" alt = "Figure Element" 
+        height = "200" width = "300">
+     <figcaption class = "figure-caption">This is a minimally invasive, bladeless form of keyhole laser eye surgery.</figcaption>
+  </figure>
+  </div>
+  <div class="col-lg-4">
+    <h3>Bionic Eye sight vision</h3>
+    <figure class = "figure">
+       <img src = "{{ url_for('static',filename='4.jpg') }}" 
+          class = "figure-img img-fluid rounded" alt = "Figure Element" 
+          height = "200" width = "300">
+       <figcaption class = "figure-caption">A bionic eye could restore sight to the blind and greatly improve</figcaption>
+    </figure>
+    </div>
+    <div class="col-lg-4">
+      <h3>Glaucouma Surgery</h3>
+      <figure class = "figure">
+         <img src = "{{ url_for('static',filename='5.jpg') }}" 
+            class = "figure-img img-fluid rounded" alt = "Figure Element" 
+            height = "200" width = "300">
+         <figcaption class = "figure-caption">Newest Equipment is used!</figcaption>
+      </figure>
+      </div>
+      </div>
+</div>
+
+
 <br><br>
 
      <!--location-->
@@ -129,7 +197,7 @@
     <div class="container p-4">
       <div class="row mt-4">
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h2 class="text-uppercase mb-4" style="font-style:oblique;">OPTHA</h2>
+          <h3 class="text-uppercase mb-4" style="font-style:oblique;">OPTHA</h3>
   
           <p>
             OPTHA committed to provide the best services in eye care through best improvements of systems, process, technology.

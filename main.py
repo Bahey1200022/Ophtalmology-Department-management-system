@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
@@ -134,7 +134,12 @@ def aboutuss():
 def doctorss():
    return render_template('Doctors.html')  
 ###################################################################################################################################################################
-
+@app.route('/contactus')
+def contactus():
+   return render_template('contactus.html')  
+ 
+ 
+ 
 @app.route('/complaints',methods =['POST','GET'])
 def complaints():
   if request.method =='POST':

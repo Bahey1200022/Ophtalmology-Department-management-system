@@ -6,22 +6,53 @@
     <title>Home page</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/doctors.css') }}">
-
+    <style>
+    body { 
+        padding-top: 100px; 
+      }
+      .navbar-brand
+      {
+        font-size: 60px;
+        font-style: oblique;
+      }
+      
+      .navbar-nav{
+          font-size: 20px;
+      }
+      .navbar-nav > li{
+          padding-left:30px;
+          padding-right:30px;
+      }
+      .navbar{
+          background: linear-gradient(to top left, #003366 32%, #336699 68%);
+      }
+      
+      .text{
+          font-size:60px;
+      }
+      
+      
+      
+      footer{
+        background: linear-gradient(to top left, #003366 32%, #336699 68%);
+      }
+      .text{
+        color:#003366 ;
+       font-weight: 500;
+       font-size:40px;
+      }
+      
+      form {
+         padding-right: 30px;
+         padding-left: 30px;
+         border-style: solid;
+         border-color: #003366;
+         box-sizing: border-box;
+         margin: 50px 50px;
+            }
+          </style>
 </head>
-<style>
-  .card-columns {
-    @include media-breakpoint-only(lg) {
-      column-count: 4;
-    }
-    @include media-breakpoint-only(xl) {
-      column-count: 5;
-    }
-  }
- 
-</style>
 <body>
- 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
     <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
     <button
@@ -45,10 +76,10 @@
       
           </li>
           <li class="nav-item active">
-              <a href="/contactus" class="nav-link">Contact us</a>
+              <a href="#" class="nav-link">Contact us</a>
           </li>
           <li class="nav-item active">
-              <a href="\/doctors" class="nav-link">Doctors</a>
+              <a href="/doctors" class="nav-link">Doctors</a>
           </li>
           <li class="nav-item active">
               <a href="#fat" class="nav-link">services</a>
@@ -60,78 +91,6 @@
       </div>
    </nav> 
    
-  <!--doctors info-->
-
-  <br><br><br>
-  <div class="container">
-   <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="{{ url_for('static',filename='david.jpg')}}" alt="Card image cap">
-      <div class="card-body">
-        <h2 class="card-title">Dr.David Malof</h2>
-        <p class="card-text"> specialist in Ophthalmology </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Sunday 9am-5pm</small>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="{{ url_for('static',filename='grace.jpg')}}" alt="Card image cap">
-      <div class="card-body">
-        <h2 class="card-title">Dr.Grace Martin </h2>
-        <p class="card-text">Cataract Specialist </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Monday 9am-2pm</small>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="{{ url_for('static',filename='emily.jpg')}}" alt="Card image cap">
-      <div class="card-body">
-        <h2 class="card-title">Dr.Emily Wright</h2>
-        <p class="card-text">Keratoconus Specialist </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Tuesday 2pm-6pm</small>
-      </div>
-    </div>
-  </div>
-  <br><br>
-  <div class="card-deck">
-    <div class="card">
-        <img class="card-img-top" src="{{ url_for('static',filename='erwin.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h2 class="card-title">Dr.Erwin Cremin</h2>
-          <p class="card-text">Anaesthesist</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Thursday 8am-5pm</small>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="{{ url_for('static',filename='bahaa.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h2 class="card-title">Dr.Ali bahaa</h2>
-          <p class="card-text">Specialist in Ophthalmology </p>
-        </div>
-        <div class="card-footer">
-          <small class="">Friday 8am-12pm</small>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="{{ url_for('static',filename='eliza.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h2 class="card-title">Dr.Elizabeth Branch</h2>
-          <p class="card-text">Specialist in Ophthalmology </p>
-        </div>
-        <div class="card-footer">
-          <small class="">Saturday 9am-5pm</small>
-        </div>
-      </div>
-  </div>
-</div>
-
-
 
 <!--footer-->
 <br><br>
