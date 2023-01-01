@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="canyouseeme",
+  passwd="palmhome",
   database="optha"
 )
 
@@ -41,7 +41,11 @@ def loginDr():
         val12=[k]
         mycursor.execute(sql12, val12)
         patients=mycursor.fetchall()
-        dr={"drname":k,"p":patients}
+        sql13 ="SELECT PFname,PLname,oldAdate,oldPid FROM old_appointment WHERE (DR =%s)"
+        val13=[k]
+        mycursor.execute(sql13, val13)
+        oldappointments=mycursor.fetchall()
+        dr={"drname":k,"p":patients,"oldp":oldappointments}
         
          
         
@@ -138,7 +142,7 @@ def doctorss():
 def contactus():
    return render_template('contactus.html')  
  
- 
+######################################################################################################################################### 
  
 @app.route('/complaints',methods =['POST','GET'])
 def complaints():

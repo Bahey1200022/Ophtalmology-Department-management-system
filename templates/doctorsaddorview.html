@@ -12,11 +12,13 @@
     }
     .f{
       position:relative;
-        top:100px;
+      top:20px;
+      
     }
-    .btn btn-primary{
-      position: relative
-      top:200px
+    #2{
+      position: relative;
+      top:1200px;
+      
       
     }
   </style>
@@ -46,9 +48,30 @@
             {% endfor %}
         </tbody>
       </table>
-         
+       <h3 class="f">Old appointments of Dr. {{data["drname"]}}:</h3>
+      <table class="table" id="2">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">patientFname</th>
+            <th scope="col">PatientLname</th>
+            <th scope="col">Adate</th>
+            <th scope="col">Pid</th>
 
-      <a href="/loginDr" class="btn btn-primary">click Here!</a>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in data["oldp"]%}
+        <tr>
+            <td>{{d.0}}</td>
+            <td>{{d.1}}</td>
+            <td>{{d.2}}</td>
+            <td>{{d.3}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+      
 </main>
     </body>
 </html>
