@@ -48,25 +48,25 @@
 <div class="container">
   <form class="form-inline">
     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select Dr's Name:</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-      <option value="1">Ali</option>
-      <option value="2">Asmaa</option>
-      <option value="3">Three</option>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="doctor">
+      {% for d in msg['rec']%}
+      <option >{{d.0}}</option>
+      
+      {% endfor %}
     </select>
     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select your appointment date:</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-      <option value="1">Sunday 9am-5pm </option>
-      <option value="2">Monday 9am-2pm </option>
-      <option value="3">Tuesday 2pm-6pm</option>
-      <option value="4">Thursday 8am-5pm </option>
-      <option value="5">Friday 8am-12pm</option>
-      <option value="6">Saturday 9am-5pm</option>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="date">
+      <option value="Sunday ">Sunday 9am-5pm </option>
+      <option value="Monday ">Monday 9am-2pm </option>
+      <option value="Tuesday ">Tuesday 2pm-6pm</option>
+      <option value="Thursday ">Thursday 8am-5pm </option>
+      <option value="Friday ">Friday 8am-12pm</option>
+      <option value="Saturday ">Saturday 9am-5pm</option>
     </select>
     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Consultation / Follow up</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-      <option value="1">Consultation</option>
-      <option value="2">Follow up</option>
-      <option value="3">other</option>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="stat">
+      <option value="Consultation">Consultation</option>
+      <option value="Follow up">Follow up</option>
       
     </select>
   

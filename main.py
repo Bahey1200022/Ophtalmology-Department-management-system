@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="canyouseeme",
+  passwd="palmhome",
   database="optha"
 )
 
@@ -37,11 +37,11 @@ def loginDr():
         if r==None:
           return render_template('doctorslogin.html')
         k=r[1]
-        sql12 ="SELECT patientFname,PatientLname,Adate,Pid FROM appointments WHERE (Doctor =%s)"
+        sql12 ="SELECT patientFname,PatientLname,Adate,Pid,status FROM appointments WHERE (Doctor =%s)"
         val12=[k]
         mycursor.execute(sql12, val12)
         patients=mycursor.fetchall()
-        sql13 ="SELECT PFname,PLname,oldAdate,oldPid FROM old_appointment WHERE (DR =%s)"
+        sql13 ="SELECT PFname,PLname,oldAdate,oldPid,old_status FROM old_appointment WHERE (DR =%s)"
         val13=[k]
         mycursor.execute(sql13, val13)
         oldappointments=mycursor.fetchall()
@@ -120,8 +120,9 @@ def appoint():
       f=session.get('p',None)
       x=request.form['doctor']
       y=request.form['date']
-      sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid)Values(%s,%s,%s,%s,%s)"
-      val3=(f[0],y,x,f[1],f[2])
+      z=request.form['stat']
+      sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid,status)Values(%s,%s,%s,%s,%s,%s)"
+      val3=(f[0],y,x,f[1],f[2],z)
       mycursor.execute(sql3, val3)
       mydb.commit()
       return render_template('p1.html')
