@@ -6,16 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Doctors only</title>
-
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> -->
+    <title>Admins only</title>
 
     
     <link rel="stylesheet" href="{{ url_for('static',filename='css/drlogin.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
-
-<!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <style>
       .bd-placeholder-img {
@@ -80,9 +76,8 @@
   <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
 </nav>
 <main class="form-signin w-100 m-auto">
-  <form action ="http://127.0.0.1:5000/loginDr" method ="POST">
-    
-    <h1 class="h3 mb-3 fw-normal">Doctor Login</h1>
+  <form action ="http://127.0.0.1:5000/admin" method ="POST">
+    <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="x" input required>
@@ -99,7 +94,6 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
-    
   </form>
 </main>
 

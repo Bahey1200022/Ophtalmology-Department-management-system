@@ -18,24 +18,24 @@
        </head>
       <body>
           <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-            <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+            <a href="http://127.0.0.1:5000" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
           </nav>
          
           <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead-light">
               <tr>
-                <th scope="col">Doctor</th>
-                <th scope="col">available on</th>
-                <th scope="col">Speciality</th>
+                <h5><th scope="col">Doctor</th></h5>
+                <h5><th scope="col">available on</th></h5>
+                <h5><th scope="col">Speciality</th></h5>
 
             </tr>
           </thead>
           <tbody>
             {% for d in msg['rec']%}
             <tr>
-                <td>{{d.0}}</td>
-                <td>{{d.1}}</td>
-                <td>{{d.2}}</td>
+                <td><h5>{{d.0}}</h5></td>
+                <td><h5>{{d.1}}</h5></td>
+                <td><h5>{{d.2}}</h5></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -43,11 +43,43 @@
                
         
     
-<form class="f"  action ="http://127.0.0.1:5000/booking_successful" method ="POST">>
-<input type="text" placeholder="date_of_app" name ="date">
+<form class="f"  action ="http://127.0.0.1:5000/booking_successful" method ="POST">
+
+<div class="container">
+  <form class="form-inline">
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select Dr's Name:</label>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <option value="1">Ali</option>
+      <option value="2">Asmaa</option>
+      <option value="3">Three</option>
+    </select>
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select your appointment date:</label>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <option value="1">Sunday 9am-5pm </option>
+      <option value="2">Monday 9am-2pm </option>
+      <option value="3">Tuesday 2pm-6pm</option>
+      <option value="4">Thursday 8am-5pm </option>
+      <option value="5">Friday 8am-12pm</option>
+      <option value="6">Saturday 9am-5pm</option>
+    </select>
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Consultation / Follow up</label>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <option value="1">Consultation</option>
+      <option value="2">Follow up</option>
+      <option value="3">other</option>
+      
+    </select>
+  
+    <button type="submit" class="btn btn-primary my-1 text-center">confirm reservation</button>
+  </form>
+
+<!--<input type="text" placeholder="date_of_app" name ="date">
 <input type="text" placeholder="dr" name ="doctor">
-<button class="w-100 btn btn-lg btn-primary" type="submit">reserve</button> 
+<br>
+<button class="w-10 btn btn-lg btn-primary text-center" type="submit">reserve</button> -->
+</div>
+
 </form>
 </main>
-    </body>
+</body>
 </html>

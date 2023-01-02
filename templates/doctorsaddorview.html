@@ -27,8 +27,10 @@
           <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <a href="/" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
           </nav>
+          <br><br> 
+          <h5 class="f">Upcoming appointments of Dr. {{data["drname"]}}:</h5>
           <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead-light">
               <tr>
                 <th scope="col">patientFname</th>
                 <th scope="col">PatientLname</th>
@@ -40,15 +42,17 @@
           <tbody>
             {% for d in data["p"]%}
             <tr>
-                <td>{{d.0}}</td>
-                <td>{{d.1}}</td>
-                <td>{{d.2}}</td>
-                <td>{{d.3}}</td>
+                <td><h5>{{d.0}}</h5></td>
+                <td><h5>{{d.1}}</h5></td>
+                <td><h5>{{d.2}}</h5></td>
+                <td><h5>{{d.3}}</h5></td>
             </tr>
             {% endfor %}
         </tbody>
       </table>
-       <h3 class="f">Old appointments of Dr. {{data["drname"]}}:</h3>
+      <br>
+      <hr size="100%" width="100%" color="black">
+       <h5 class="f">Old appointments of Dr. {{data["drname"]}}:</h5>
       <table class="table" id="2">
         <thead class="thead-dark">
           <tr>
@@ -62,10 +66,10 @@
       <tbody>
         {% for d in data["oldp"]%}
         <tr>
-            <td>{{d.0}}</td>
-            <td>{{d.1}}</td>
-            <td>{{d.2}}</td>
-            <td>{{d.3}}</td>
+            <td><h5>{{d.0}}</h5></td>
+            <td><h5>{{d.1}}</h5></td>
+            <td><h5>{{d.2}}</h5></td>
+            <td><h5>{{d.3}}</h5></td>
         </tr>
         {% endfor %}
     </tbody>

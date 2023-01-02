@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
@@ -163,7 +163,10 @@ def complaints():
     return render_template('complaints.html')
 
 ###########################################################################################################################################################################3
-
+@app.route('/admin')
+def admin():
+  
+   return render_template('admin.html')
 
 
 if __name__=='__main__':

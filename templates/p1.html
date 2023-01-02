@@ -33,7 +33,7 @@
     
         </li>
         <li class="nav-item active">
-            <a href="/contactus" class="nav-link">Contact us</a>
+            <a href="#call us" class="nav-link">Contact us</a>
         </li>
         <li class="nav-item active">
             <a href="/doctors" class="nav-link">Doctors</a>
@@ -58,20 +58,12 @@
             <h1 class="display-4">Best Technology, Best Eye Doctors!</h1>
             <p class="lead">
              The Highest Quality Care with a Personal Touch.</p>
-            <!--<p class="text">sun-sat 10:00-19:00</p>
-            <hr class="my-4">
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button"></a>
-            </p>-->
           </div>
         </div>
         <div class="col-lg-3">
             <img src="{{ url_for('static',filename='gg.png') }}" class="img-fluid" alt="Responsive image">
                       
         </div>
-       <!-- <div class="col-lg-2">
-            <img src="ll.jpg" class="img-fluid" alt="Responsive image">
-        </div>-->
         </div>
  </div>
     <!--login/signin pages-->
@@ -82,7 +74,7 @@
         <h3 class="card-title">Doctors & Healthcare Professionals </h3>
         <p class="card-text">our team of Eye Doctors, From a routine eye exam to LASIK we have a Doctor that can help.</p>
         <a href="/loginDr" class="btn btn-primary">click Here!</a>
-        <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+      
       </div>
     </div>
     <div class="card">
@@ -90,7 +82,7 @@
         <h3 class="card-title">Patients</h3>
         <p class="card-text">Looking For Consultation? Consult with your own healthcare specialist, wherever you are</p>
         <a href="/SignUpPt" class="btn btn-primary">click Here!</a>
-        <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+      
       </div>
     </div>
     <div class="card">
@@ -98,8 +90,8 @@
       <div class="card-body">
         <h3 class="card-title">Hospital</h3>
         <p class="card-text">Get basics solution for the daily life problems and soother experience of the eye related queries by experts.</p>
-        <a href="#" class="btn btn-primary">click Here!</a>
-        <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+        <a href="/admin" class="btn btn-primary">click Here!</a>
+       
       </div>
     </div>
   </div>
@@ -108,7 +100,7 @@
 <!--services-->
 <div class = "container">
   <h1 id="fat"> Every Body Deserves to see the world clearly! </h1>
-  <h1 class="text"> Our Eye Care Services: </h1><br>
+  <h1 class="text"> Our Eye Care Services: </h1><br><br>
   <!--first row-->
   <div class="row">
     <div class="col-lg-4">
@@ -171,26 +163,36 @@
       </div>
 </div>
 
-
+<!--contactus-->
 <br><br>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+<h1 id="call us">Contact Us!</h1>
+<h5> +01 234 567 88</h5>
+<h5>+01 234 567 89</h5>
+      <figure class = "figure">
+         <img src = "{{ url_for('static',filename='alooo.png') }}" 
+            class = "figure-img img-fluid rounded" alt = "Figure Element" 
+            height = "200" width = "300">
+         <figcaption class = "figure-caption"></figcaption>
+      </figure>
+    </div>
+    <div class="col-lg-8">
+    </div>
+    </div>
+  </div>
+<br><br>
      <!--location-->
-<div class="row">
-    <div class="col-lg-6">
+     <div class="container">
+     <div class="text text-center ">
+           <p> Our OPTHA Location</p>
+           <a type="button" class="btn btn-floating btn-lg"><i class="fa fa-map-marker"></i> Canada,Toronto</a>
+     </div>
         <div class="location" style="text-align:center">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184552.57290251463!2d-79.51814314739457!3d43.718155660478686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2seg!4v1671534676162!5m2!1sen!2seg" width="650" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-    </div>
-    <div class="col-lg-6 " >
-        <div class="text">
-           <p> Our OPTHA Location </p>
-           <a type="button" class="btn btn-floating btn-lg"><i class="fa fa-map-marker"></i> Canada,Toronto</a>
-          
-
-        </div>
-
-    </div>
-</div>
+      </div>
   
     <!--footer-->
     <footer class="text-white text-center text-lg-start bg-primary">
@@ -238,9 +240,9 @@
             </li>
           </ul>
         </div>
-        <!--Grid column-->
+        
   
-        <!--Grid column-->
+        
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">Opening hours</h5>
   
@@ -261,13 +263,11 @@
             </tbody>
           </table>
         </div>
-        <!--Grid column-->
+        
       </div>
-      <!--Grid row-->
+      
     </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
+   
     <div class="text-center p-3" style="background: linear-gradient(to top left, #003366 32%, #336699 68%);">
       
     </div>
