@@ -163,7 +163,25 @@ def complaints():
   else :
     return render_template('complaints.html')
 
+
 ###########################################################################################################################################################################3
+@app.route('/cancellation_done',methods =['POST','GET'])
+def cancel():
+  if request.method =='POST':
+      f=session.get('p',None)
+      x=request.form['doctor']
+      y=request.form['date']
+      sql="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
+      val=(f[0],y,x,f[1])
+      mycursor.execute(sql, val)
+      mydb.commit()
+      return render_template('p1.html')
+  else:
+      return render_template('aboutus.html')
+  
+
+
+############################################################################################################################################################
 @app.route('/admin')
 def admin():
   

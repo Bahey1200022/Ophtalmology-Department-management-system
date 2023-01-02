@@ -14,6 +14,10 @@
       position:relative;
         top:100px;
     }
+    h2{
+      position:relative;
+      top:100px; 
+    }
   </style>
        </head>
       <body>
@@ -71,15 +75,42 @@
     </select>
   
     <button type="submit" class="btn btn-primary my-1 text-center">confirm reservation</button>
+  
   </form>
-
 <!--<input type="text" placeholder="date_of_app" name ="date">
 <input type="text" placeholder="dr" name ="doctor">
 <br>
 <button class="w-10 btn btn-lg btn-primary text-center" type="submit">reserve</button> -->
 </div>
+</form>
+
+<h2>For cancellation:</h2>
+<form class="f"  action ="http://127.0.0.1:5000/cancellation_done" method ="POST">
+  
+  <div class="container">
+    <form class="form-inline">
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select Dr's Name:</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="doctor">
+        {% for d in msg['rec']%}
+        <option >{{d.0}}</option>
+        
+        {% endfor %}
+      </select>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select the appointment date ypu want to cancel:</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="date">
+        <option value="Sunday ">Sunday 9am-5pm </option>
+        <option value="Monday ">Monday 9am-2pm </option>
+        <option value="Tuesday ">Tuesday 2pm-6pm</option>
+        <option value="Thursday ">Thursday 8am-5pm </option>
+        <option value="Friday ">Friday 8am-12pm</option>
+        <option value="Saturday ">Saturday 9am-5pm</option>
+      </select>
+      <button type="submit" class="btn btn-primary my-1 text-center">cancel reservation</button>
+  </form>
+</div>
 
 </form>
+
 </main>
 </body>
 </html>
