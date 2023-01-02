@@ -119,6 +119,10 @@ def appoint():
       val3=(f[0],y,x,f[1],f[2],z)
       mycursor.execute(sql3, val3)
       mydb.commit()
+      sql4="UPDATE patients SET AssignedDr=%s WHERE PID=%s"
+      val4=(x,f[2])
+      mycursor.execute(sql4, val4)
+      mydb.commit()
       return render_template('p1.html')
     else:
       return render_template('aboutus.html')
@@ -168,6 +172,10 @@ def cancel():
       sql="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
       val=(f[0],y,x,f[1])
       mycursor.execute(sql, val)
+      mydb.commit()
+      sql4="UPDATE patients SET AssignedDr=NULL WHERE PID=%s"
+      val4=[f[2]]
+      mycursor.execute(sql4, val4)
       mydb.commit()
       return render_template('p1.html')
   else:
