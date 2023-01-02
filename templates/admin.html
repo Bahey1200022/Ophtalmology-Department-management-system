@@ -6,7 +6,31 @@
     <title>Home page</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
+    <style>
+        body { 
+            padding-top: 100px; 
+          }
+          .navbar-brand
+          {
+            font-size: 40px;
+            font-style: oblique;
+          }
+          
+          .navbar-nav{
+              font-size: 20px;
+          }
+          .navbar-nav > li{
+              padding-left:30px;
+              padding-right:30px;
+          }
+          .navbar{
+              background: linear-gradient(to top left, #003366 32%, #336699 68%);
+          }
+          
+          .text{
+              font-size:60px;
+          }
+    </style>
 </head>
 <body>
     <!--upper bar-->
@@ -22,28 +46,30 @@
  </button>
  <div class="collapse navbar-collapse" id="navbarnav">
     <ul class="navbar-nav mx-auto">
-       <li class="nav-item dropdown">
-           <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Home</a>
-             <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="/aboutus">About us</a></li>
-               <li><a class="dropdown-item" href="#">prices</a></li>
-               <li><a class="dropdown-item" href="#">FAQ</a></li>
-               <li><a class="dropdown-item" href="/doctors">Our Team</a></li>
-             </ul>
-   
+       <li class="nav-item active">
+           <a href="#" class="nav-link">Upcoming Appointments</a>
        </li>
        <li class="nav-item active">
-           <a href="#call us" class="nav-link">Contact us</a>
+           <a href="#" class="nav-link">Old Appointments</a>
        </li>
        <li class="nav-item active">
-           <a href="/doctors" class="nav-link">Doctors</a>
+           <a href="#" class="nav-link">Doctors</a>
        </li>
        <li class="nav-item active">
-           <a href="#fat" class="nav-link">services</a>
+           <a href="#" class="nav-link">Nurses</a>
        </li>
        <li class="nav-item active">
-           <a href="/complaints" class="nav-link">for complaints</a>
+           <a href="#" class="nav-link">Patients</a>
        </li>
+       <li class="nav-item active">
+        <a href="#" class="nav-link">Equipments</a>
+    </li>
+    <li class="nav-item active">
+        <a href="#" class="nav-link">prices</a>
+    </li>
+    <li class="nav-item active">
+        <a href="#" class="nav-link">complaints</a>
+    </li>
     </ul>
    </div>
 </nav>

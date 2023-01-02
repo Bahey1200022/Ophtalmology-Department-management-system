@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
