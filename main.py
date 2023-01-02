@@ -70,12 +70,6 @@ def loginPt():
         r=mycursor.fetchall()
         data1={"rec":r,"patient":f}
         session['p']=f
-        # x=request.form['doctor']
-        # y=request.form['date']
-        # sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid)Values(%s,%s,%s,%s,%s)"
-        # val3=(f[0],y,x,f[1],f[2])
-        # mycursor.execute(sql3, val3)
-        # mydb.commit()
         if f==None:
           return render_template('Patient.html')
         else :
@@ -182,10 +176,18 @@ def cancel():
 
 
 ############################################################################################################################################################
-@app.route('/admin')
+@app.route('/admin',methods =['POST','GET'])
 def admin():
-  
-   return render_template('admin.html')
+  if request.method =='POST':
+    admin=request.form['x']
+    passw=request.form['y']
+    if admin=="admin" and passw=="dbdemo":
+      return render_template('admin.html')
+    else:
+      return render_template('adminlogin.html')
+  else:
+    return render_template('adminlogin.html')
+ ##############################################################################################################################################################################     
 
 
 if __name__=='__main__':
