@@ -1,1 +1,49 @@
-hi.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
+</head>
+<body>
+    <!--upper bar-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+ <a href="/admin" class="navbar-brand h1"><img class="d-inline-block align-top"src=""/>OPTHA</a>
+ <button
+  type="button" data-toggle="collapse" 
+  data-target="#navbarnav" 
+  class="navbar-toggler" 
+  aria-controls="navbarnav" 
+  aria-expanded="false" aria-label="toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarnav">
+    <ul class="navbar-nav mx-auto">
+       <li class="nav-item dropdown">
+           <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Home</a>
+             <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="/aboutus">About us</a></li>
+               <li><a class="dropdown-item" href="#">prices</a></li>
+               <li><a class="dropdown-item" href="#">FAQ</a></li>
+               <li><a class="dropdown-item" href="/doctors">Our Team</a></li>
+             </ul>
+   
+       </li>
+       <li class="nav-item active">
+           <a href="#call us" class="nav-link">Contact us</a>
+       </li>
+       <li class="nav-item active">
+           <a href="/doctors" class="nav-link">Doctors</a>
+       </li>
+       <li class="nav-item active">
+           <a href="#fat" class="nav-link">services</a>
+       </li>
+       <li class="nav-item active">
+           <a href="/complaints" class="nav-link">for complaints</a>
+       </li>
+    </ul>
+   </div>
+</nav>
