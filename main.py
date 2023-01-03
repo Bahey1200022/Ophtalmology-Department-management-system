@@ -207,14 +207,18 @@ def complete():
     pid=request.form['id']
     dr=request.form['dr']
     s=request.form['stat']
-    sql1="INSERT INTO old_appointment(PFname,PLname,oldPid,oldAdate,DR,old_status) VALUES(%s,%s,%s,%s,%s,%s)"
-    val1=(fname,lname,pid,date,dr,s)
-    mycursor.execute(sql1, val1)
-    mydb.commit()
     sql2="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
     val2=(fname,date,dr,lname)
     mycursor.execute(sql2, val2)
     mydb.commit()
+    sql1="INSERT INTO old_appointment(PFname,PLname,oldPid,oldAdate,DR,old_status) VALUES(%s,%s,%s,%s,%s,%s)"
+    val1=(fname,lname,pid,date,dr,s)
+    mycursor.execute(sql1, val1)
+    mydb.commit()
+    # sql2="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
+    # val2=(fname,date,dr,lname)
+    # mycursor.execute(sql2, val2)
+    # mydb.commit()
     return redirect('/old_appointments')
   else:
     return render_template('admin.html')
