@@ -34,6 +34,10 @@
             position:relative;
             top:40px;
           }
+          .table{
+            position:relative;
+            top:40px;
+          }
     </style>
 </head>
 <body>
@@ -51,10 +55,10 @@
  <div class="collapse navbar-collapse" id="navbarnav">
     <ul class="navbar-nav mx-auto">
        <li class="nav-item active">
-           <a href="#" class="nav-link">Upcoming Appointments</a>
+           <a href="/admin" class="nav-link">Upcoming Appointments</a>
        </li>
        <li class="nav-item active">
-           <a href="/old_appointments" class="nav-link">Old Appointments</a>
+           <a href="#" class="nav-link">Old Appointments</a>
        </li>
        <li class="nav-item active">
            <a href="#" class="nav-link">Doctors</a>
@@ -77,9 +81,14 @@
     </ul>
    </div>
 </nav>
-<table class="table" id="2">
-    <thead class="thead-light">
-      <tr>
+
+
+
+
+<h5 class="f">Old appointments :</h5>
+      <table class="table" id="2">
+        <thead class="thead-light">
+          <tr>
         <th scope="col">patientFname</th>
         <th scope="col">PatientLname</th>
         <th scope="col">Adate</th>
@@ -87,37 +96,20 @@
         <th scope="col">Status</th>
         <th scope="col">Dr.</th>
 
-    </tr>
-  </thead>
-  <tbody>
-    {% for d in msg%}
-    <tr>
-        <td><h5>{{d.0}}</h5></td>
-        <td><h5>{{d.3}}</h5></td>
-        <td><h5>{{d.1}}</h5></td>
-        <td><h5>{{d.4}}</h5></td>
-        <td><h5>{{d.5}}</h5></td>
-        <td><h5>{{d.2}}</h5></td>
-    </tr>
-    {% endfor %}
-</tbody>
-</table>
-<hr size="100%" width="100%" color="black">
-<h5>Mark it complete:<h5>
-    <form action ="http://127.0.0.1:5000/appointment_marked" method ="POST">
-        <label for="Pfname">patientFname:</label><br>
-        <input type="text" id="fname" name="Pfname"><br>
-        <label for="Plname">PatientLname</label><br>
-        <input type="text" id="lname" name="Plname"><br>
-        <label for="date">Adate</label><br>
-        <input type="text" id="date" name="date"><br>
-        <label for="id">PID</label><br>
-        <input type="number" id="id" name="id"><br>
-        <label for="dr">DR</label><br>
-        <input type="text" id="dr" name="dr"><br>
-        <label for="stat">status</label><br>
-        <input type="text" id="stat" name="stat"><br>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">DONE</button>
-
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in data %}
+        <tr>
+            <td><h5>{{d.0}}</h5></td>
+            <td><h5>{{d.3}}</h5></td>
+            <td><h5>{{d.1}}</h5></td>
+            <td><h5>{{d.4}}</h5></td>
+            <td><h5>{{d.5}}</h5></td>
+            <td><h5>{{d.2}}</h5></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
 </body>
 </html>

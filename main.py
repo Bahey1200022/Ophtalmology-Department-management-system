@@ -12,7 +12,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="canyouseeme",
+  passwd="palmhome",
   database="optha"
 )
 
@@ -189,14 +189,43 @@ def admin():
   if request.method =='POST':
     admin=request.form['x']
     passw=request.form['y']
+    mycursor.execute("SELECT * FROM appointments")
+    data=mycursor.fetchall()
     if admin=="admin" and passw=="dbdemo":
-      return render_template('admin.html')
+      return render_template('admin.html',msg=data)
     else:
       return render_template('adminlogin.html')
   else:
     return render_template('adminlogin.html')
  ##############################################################################################################################################################################     
-
+@app.route('/appointment_marked',methods=['POST','GET'])
+def complete():
+  if request.method =='POST':
+    fname=request.form['Pfname']
+    lname=request.form['Plname']
+    date=request.form['date']
+    pid=request.form['id']
+    dr=request.form['dr']
+    s=request.form['stat']
+    sql1="INSERT INTO old_appointment(PFname,PLname,oldPid,oldAdate,DR,old_status) VALUES(%s,%s,%s,%s,%s,%s)"
+    val1=(fname,lname,pid,date,dr,s)
+    mycursor.execute(sql1, val1)
+    mydb.commit()
+    sql2="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
+    val2=(fname,date,dr,lname)
+    mycursor.execute(sql2, val2)
+    mydb.commit()
+    return redirect('/old_appointments')
+  else:
+    return render_template('admin.html')
+#########################################################################################
+@app.route('/old_appointments',methods=['GET'])
+def retrieve():
+  mycursor.execute("SELECT * FROM old_appointment")
+  r=mycursor.fetchall()
+  return render_template('oldapp.html',data=r)
+    
+  
 
 if __name__=='__main__':
     app.run(debug=True)
