@@ -20,8 +20,9 @@ body {
 }
 
 .text{
-    font-size:60px;
+  font-size:60px;
 }
+
 
 
 .card{
@@ -52,14 +53,15 @@ body {
 }
 
 .text{
-    color:#003366 ;
-   font-weight: 500;
-   font-size:40px;
+  color:#003366 ;
+ font-weight: 500;
+ font-size:430px;
 }
 
 footer{
     background: linear-gradient(to top left, #003366 32%, #336699 68%);
 }
+
 
 
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home page</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/p1.css') }}">
 </head>
 <body>
@@ -100,7 +100,7 @@
 <!--services-->
 <div class = "container">
   <h1 id="fat"> Every Body Deserves to see the world clearly! </h1>
-  <h1 class="text"> Our Eye Care Services: </h1><br><br>
+  <div class="text"> Our Eye Care Services: </div><br><br>
   <!--first row-->
   <div class="row">
     <div class="col-lg-4">
@@ -167,19 +167,18 @@
 <br><br>
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
-<h1 id="call us">Contact Us!</h1>
-<h5> +01 234 567 88</h5>
-<h5>+01 234 567 89</h5>
+    <div class="col text-center">
+<h1 id="call us">Contact OPTHA!</h1>
+<p>How can we help?<p>
+<h5>OPTHA@gmail.com</h5>
+<h6> +01 234 567 88</h6>
+<h6>+01 234 567 89</h6>
       <figure class = "figure">
          <img src = "{{ url_for('static',filename='alooo.png') }}" 
             class = "figure-img img-fluid rounded" alt = "Figure Element" 
             height = "200" width = "300">
          <figcaption class = "figure-caption"></figcaption>
       </figure>
-    </div>
-    <div class="col-lg-8">
-     
     </div>
     </div>
   </div>
@@ -219,19 +218,19 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+          <!--<h5 class="text-uppercase mb-4 pb-1">Search something</h5>
   
           <div class="form-outline form-white mb-4">
             <input type="text" id="formControlLg" class="form-control form-control-lg" />
             <label class="form-label" for="formControlLg"></label>
-          </div>
+          </div>-->
   
           <ul class="fa-ul" style="margin-left: 1.65em;">
             <li class="mb-3">
               <span class="fa-li"><i class="fa fa-home"></i></span><span class="ms-2">Canada,Toronto</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fa fa-envelope"></i></span><span class="ms-2">optha@example.com</span>
+              <span class="fa-li"><i class="fa fa-envelope"></i></span><span class="ms-2">optha@gmail.com</span>
             </li>
             <li class="mb-3">
               <span class="fa-li"><i class="fa fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
