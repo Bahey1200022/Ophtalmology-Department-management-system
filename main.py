@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, request, url_for, redirect, ses
 import mysql.connector
 from flask_session import Session
 
+#
 
 
 app=Flask(__name__, static_url_path='/static')
@@ -228,8 +229,14 @@ def retrieve():
   mycursor.execute("SELECT * FROM old_appointment")
   r=mycursor.fetchall()
   return render_template('oldapp.html',data=r)
-    
+###############################################################################################################################################    
+@app.route('/plist',methods=['GET'])
+def p():
+  mycursor.execute("SELECT * FROM patients")
+  r=mycursor.fetchall()
   
+  return render_template('patient_table.html',data=r)
+       
 
 if __name__=='__main__':
     app.run(debug=True)
