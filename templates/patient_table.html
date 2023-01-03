@@ -81,7 +81,7 @@
     </ul>
    </div>
 </nav>
-<h5 class="f">Old appointments :</h5>
+<h5 class="f">Patients :</h5>
       <table class="table" id="2">
         <thead class="thead-light">
           <tr>
@@ -97,7 +97,6 @@
         <th scope="col">password</th>
         <th scope="col">insuranceN</th>
         <th scope="col">Diseases</th>
-        <th scope="col">Record</th>
         <th scope="col">AssignedDr</th>
 
         
@@ -106,7 +105,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for d in data %}
+        {% for d in data['rec'] %}
         <tr>
             <td><h5>{{d.0}}</h5></td>
             <td><h5>{{d.1}}</h5></td>
@@ -120,12 +119,32 @@
             <td><h5>{{d.9}}</h5></td>
             <td><h5>{{d.10}}</h5></td>
             <td><h5>{{d.11}}</h5></td>
-            <td><h5>{{d.12}}</h5></td>
             <td><h5>{{d.13}}</h5></td>
 
         </tr>
         {% endfor %}
     </tbody>
   </table>
+  <h5>Your recieved Files</h5>
+    <table class="table table table-bordered">
+      <thead>
+        <tr>
+            
+            <th scope="col">record</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in data['rr'] %}
+         <tr>
+            
+            <td>
+              <div class="text-right col">
+                <a href="http://127.0.0.1:5000/download/{{r[0]}}" class="btn btn-primary align-self-center">Download</a>
+              </div>  
+            </td>
+         </tr>
+         {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

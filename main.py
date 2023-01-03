@@ -1,7 +1,7 @@
-from flask import Flask, render_template, flash, request, url_for, redirect, session
+from flask import Flask, render_template, flash, request, url_for, redirect, session,send_file
 import mysql.connector
 from flask_session import Session
-
+from io import BytesIO
 #
 
 
@@ -234,9 +234,51 @@ def retrieve():
 def p():
   mycursor.execute("SELECT * FROM patients")
   r=mycursor.fetchall()
+  mycursor.execute("SELECT MR FROM patients ")
+    #row_headers=[x[0] for x in mycursor.description] #this will extract row headers
+  r2 = mycursor.fetchall()
+  data1={
+    "rec":r,"rr":r2
+  }
   
-  return render_template('patient_table.html',data=r)
+  
+  return render_template('patient_table.html',data=data1)
+ 
+ ####################################################3333333333333333333333333333333333333333333333333      
+app.route('/download/<fileId>')#href="http://127.0.0.1:5000/download/{{r[0]}}" 
+def downloadFile(fileId):
+    
+    mycursor.execute("SELECT PFNAME, MR FROM patients ")
+    #row_headers=[x[0] for x in mycursor.description] #this will extract row headers
+    file_data = mycursor.fetchall()
+    return send_file(BytesIO(file_data[0]),attachment_filename=file_data[1], as_attachment=True)
+##############################################################################################3333
+@app.route('/Nurses')
+def nurses():
+  mycursor.execute("SELECT * FROM nurses")
+  r=mycursor.fetchall()
+  return render_template('nurses.html',msg=r)
+#####################################################################################################  
+
+@app.route('/nurse_added',methods=['POST','GET']) 
+def nurseadd():
+  if request.method =='POST':
+    fname=request.form['Pfname']
+    g=request.form['sex']
+    date=request.form['date']
+    salary=request.form['salary']
+    ssn=request.form['ssn']
+    number=request.form['number']
+    sql="INSERT INTO nurses(NName,Gender,SSN,Birthdate,salary,phoneN)Values(%s,%s,%s,%s,%s,%s)"
+    val=(fname,g,date,salary,ssn,number)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    # mycursor.execute("SELECT * FROM nurses")
+    # r=mycursor.fetchall()
+    return redirect('/Nurses')
+  
        
+  
 
 if __name__=='__main__':
     app.run(debug=True)

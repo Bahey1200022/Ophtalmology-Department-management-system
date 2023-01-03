@@ -81,35 +81,54 @@
     </ul>
    </div>
 </nav>
-
-
-
-
-<h5 class="f">Old appointments :</h5>
+<h5 class="f">Nurses :</h5>
       <table class="table" id="2">
         <thead class="thead-light">
           <tr>
-        <th scope="col">patientFname</th>
-        <th scope="col">PatientLname</th>
-        <th scope="col">Adate</th>
-        <th scope="col">Pid</th>
-        <th scope="col">Status</th>
-        <th scope="col">Dr.</th>
+        <th scope="col">Name</th>
+        <th scope="col">ID</th>
+        <th scope="col">gender</th>
+        <th scope="col">SSN</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">salary</th>
+        <th scope="col">phoneN</th>
+        
+
+        
+
 
         </tr>
       </thead>
       <tbody>
-        {% for d in data %}
+        {% for d in msg %}
         <tr>
             <td><h5>{{d.0}}</h5></td>
-            <td><h5>{{d.3}}</h5></td>
             <td><h5>{{d.1}}</h5></td>
+            <td><h5>{{d.2}}</h5></td>
+            <td><h5>{{d.3}}</h5></td>
             <td><h5>{{d.4}}</h5></td>
             <td><h5>{{d.5}}</h5></td>
-            <td><h5>{{d.2}}</h5></td>
+            <td><h5>{{d.6}}</h5></td>
+            
+
         </tr>
         {% endfor %}
     </tbody>
   </table>
+  <h5>add nurse:<h5>
+    <form action ="http://127.0.0.1:5000/nurse_added" method ="POST">
+        <label for="Pfname">Name:</label><br>
+        <input type="text" id="fname" name="Pfname"><br>
+        <label for="Plname">Gender</label><br>
+        <input type="text" id="lname" name="sex"><br>
+        <label for="date">Birthday</label><br>
+        <input type="date" id="date" name="date"><br>
+        <label for="id">salary</label><br>
+        <input type="number" id="id" name="salary"><br>
+        <label for="dr">SSN</label><br>
+        <input type="text" id="dr" name="ssn"><br>
+        <label for="stat">phoneN</label><br>
+        <input type="text" id="stat" name="number"><br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">ADD</button>
 </body>
 </html>
