@@ -38,6 +38,14 @@
             position:relative;
             top:40px;
           }
+          form{
+            position:relative;
+            top:10px;
+          }
+          #2{
+            position:relative;
+            top:30px;
+          }
     </style>
 </head>
 <body>
@@ -115,7 +123,7 @@
         {% endfor %}
     </tbody>
   </table>
-  <h5>add nurse:<h5>
+  <h5 id="2">add nurse:<h5>
     <form action ="http://127.0.0.1:5000/nurse_added" method ="POST">
         <label for="Pfname">Name:</label><br>
         <input type="text" id="fname" name="Pfname"><br>
