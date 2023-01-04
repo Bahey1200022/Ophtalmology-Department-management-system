@@ -13,7 +13,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
@@ -363,9 +363,8 @@ def changes():
     val1=(stat,serialn)
     mycursor.execute(sql1,val1)
     mydb.commit()
-    mycursor.execute("SELECT * FROM devices")
-    r=mycursor.fetchall()
-    return render_template('viewequipments.html',msg=r)
+    
+    return redirect('/equipments')
   else:
     return redirect('/equipments')
 #####################################################################################################################################################################################
