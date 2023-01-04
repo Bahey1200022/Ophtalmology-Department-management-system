@@ -143,17 +143,16 @@
         <button class="w-20 btn btn-lg btn-primary" type="submit">CHANGE</button>
     </div></div></div>
     <div class="container">
-    <div class="row">
-        <div class="col-lg text-center">
-  <h5 id="2">Update status:<h5>
-    <form action ="http://127.0.0.1:5000/dev_status"  method="POST">
-        <label for="n">serial number</label><br>
-        <input type="text" id="lname" name="s"><br>
-        <label for="dr">status</label><br>
-        <input type="text" id="dr" name="stat2"><br>
-       
-        <button class="w-20 btn btn-lg btn-primary" type="submit">CHANGE</button>
-    </div></div></div>
+      <div class="row">
+          <div class="col-lg text-center">
+    <h5 id="2">Remove device:<h5>
+      <form action ="http://127.0.0.1:5000/deletedev"  method="POST">
+          <label for="n">serial number</label><br>
+          <input type="text" id="lname" name="s"><br>
+         
+         
+          <button class="w-20 btn btn-lg btn-primary" type="submit">CHANGE</button>
+      </div></div></div
     
 </body>
 </html>

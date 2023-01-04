@@ -373,6 +373,18 @@ def changes():
 #####################################################################################################################################################################################
 
 ###################################################################3333  
+@app.route('/deletedev',methods=['POST'])
+def df():
+  x=request.form["s"]
+  sql="DELETE FROM devices WHERE serialn=%s"
+  val=[x]
+  mycursor.execute(sql,val)
+  mydb.commit()
+  return redirect('/equipments')
+  
+
+
+
 
       
   
