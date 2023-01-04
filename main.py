@@ -369,17 +369,7 @@ def changes():
   else:
     return redirect('/equipments')
 #####################################################################################################################################################################################
-@app.route('/deleteequip',methods =['POST','GET'])
-def delequipment():
-  if request.method =='POST':
-    x=request.form['s']
-    sql2="DELETE FROM devices WHERE name=%s"
-    val2=[x]
-    mycursor.execute(sql2,val2)
-    mydb.commit()
-    return redirect('/equipments')
-  else:
-    return redirect('/equipments')    
+
 ###################################################################3333  
     
   
