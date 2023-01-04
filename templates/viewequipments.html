@@ -38,6 +38,14 @@
             position:relative;
             top:40px;
           }
+          form{
+            position:relative;
+            top:10px;
+          }
+          #2{
+            position:relative;
+            top:30px;
+          }
     </style>
 </head>
 <body>
@@ -84,28 +92,58 @@
       <table class="table" id="2">
         <thead class="thead-light">
           <tr>
-        <th scope="col">Patient's First name</th>
-        <th scope="col">Patient's Last name</th>
-        <th scope="col">Old Appointment date</th>
-        <th scope="col">Patient's ID</th>
-        <th scope="col">Status</th>
-        <th scope="col">Dr's Name</th>
+        <th scope="col"> serial number</th>
+        <th scope="col">device name</th>
+        <th scope="col">company number</th>
+        <th scope="col">room number</th>
+        <th scope="col">status</th>
+        
         </tr>
       </thead>
       <tbody>
-        {% for d in data %}
+        {% for d in msg %}
         <tr>
             <td><h6>{{d.0}}</h6></td>
-            <td><h6>{{d.3}}</h6></td>
             <td><h6>{{d.1}}</h6></td>
-            <td><h6>{{d.4}}</h6></td>
-            <td><h6>{{d.5}}</h6></td>
             <td><h6>{{d.2}}</h6></td>
+            <td><h6>{{d.3}}</h6></td>
+            <td><h6>{{d.4}}</h6></td>
+            
         </tr>
         {% endfor %}
     </tbody>
   </table>
-  <br>
-  <hr>
+  <br><hr>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg text-center">
+  <h5 id="2">Add device:<h5>
+    <form action ="http://127.0.0.1:5000/dev_added" method ="POST">
+        <label for="Pfname">device name</label><br>
+        <input type="text" id="fname" name="name"><br>
+        <label for="Plname">serial number</label><br>
+        <input type="etxt" id="lname" name="sn"><br>
+        <label for="date">company number</label><br>
+        <input type="text" id="date" name="cn"><br>
+        <label for="id">room number</label><br>
+        <input type="number" id="id" name="rn"><br>
+        <label for="dr">status</label><br>
+        <input type="text" id="dr" name="stat"><br>
+       
+        <button class="w-20 btn btn-lg btn-primary" type="submit">ADD</button>
+    </div></div></div>
+    <br><hr>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg text-center">
+  <h5 id="2">Update status:<h5>
+    <form action ="http://127.0.0.1:5000/dev_status" method ="POST">
+        <label for="n">serial number</label><br>
+        <input type="text" id="lname" name="s"><br>
+        <label for="dr">status</label><br>
+        <input type="text" id="dr" name="stat2"><br>
+       
+        <button class="w-20 btn btn-lg btn-primary" type="submit">CHANGE</button>
+    </div></div></div>
 </body>
 </html>

@@ -13,7 +13,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="canyouseeme",
+  passwd="palmhome",
   database="optha"
 )
 
@@ -195,15 +195,22 @@ def admin():
   if request.method =='POST':
     admin=request.form['x']
     passw=request.form['y']
-    mycursor.execute("SELECT * FROM appointments")
-    data=mycursor.fetchall()
+    # mycursor.execute("SELECT * FROM appointments")
+    # data=mycursor.fetchall()
     if admin=="admin" and passw=="dbdemo":
-      return render_template('admin.html',msg=data)
+      return redirect('/view_appointments')
     else:
       return render_template('adminlogin.html')
   else:
     return render_template('adminlogin.html')
  ##############################################################################################################################################################################     
+@app.route('/view_appointments')
+def viewapp():
+  mycursor.execute("SELECT * FROM appointments")
+  data=mycursor.fetchall()
+  return render_template('admin.html',msg=data)
+  
+###############################################################################################################  
 @app.route('/appointment_marked',methods=['POST','GET'])
 def complete():
   if request.method =='POST':
@@ -213,8 +220,8 @@ def complete():
     pid=request.form['id']
     dr=request.form['dr']
     s=request.form['stat']
-    sql2="DELETE FROM appointments WHERE (patientFname=%s AND Adate=%s AND Doctor=%s AND PatientLname=%s) "
-    val2=(fname,date,dr,lname)
+    sql2="Delete from appointments WHERE (patientFname=%s) "
+    val2=[fname]
     mycursor.execute(sql2, val2)
     mydb.commit()
     sql1="INSERT INTO old_appointment(PFname,PLname,oldPid,oldAdate,DR,old_status) VALUES(%s,%s,%s,%s,%s,%s)"
@@ -281,8 +288,89 @@ def nurseadd():
     # mycursor.execute("SELECT * FROM nurses")
     # r=mycursor.fetchall()
     return redirect('/Nurses')
+#################################################################################################################  
+@app.route('/prices')
+def knowprice():
+  return render_template('prices.html')
+######################################################################################################################################3       
+@app.route('/viewdoctors')  
+def dr():
+  mycursor.execute("SELECT * FROM doctors")
+  r=mycursor.fetchall()
+  return render_template('doctorslist.html',msg=r)
+############################################################
+@app.route('/doctor_added',methods=['POST','GET'])
+def addoc():
+  if request.method =='POST':
+    name=request.form['Pfname']
+    g=request.form['sex']
+    date=request.form['dep']
+    salary=request.form['salary']
+    ssn=request.form['ssn']
+    number=request.form['number']
+    email=request.form['email']
+    passw=request.form['passw']
+    add=request.form['ad']
+    sql="INSERT INTO doctors(Dname,Dphone,SSN,Address,Salary,email,password,Department,Sex)Values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    val=(name,number,ssn,add,salary,email,passw,date,g)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return redirect('/viewdoctors')
+  ############################################################################################################################
+@app.route('/viewcomplaints')
+def viewcomplaints():
+  sql=mycursor.execute("SELECT * FROM complaints")
+  r=mycursor.fetchall()
+  return render_template('viewcomplaints.html',msg=r)
+#############################################################
+@app.route('/complain_received',methods=['POST','GET'])
+def complainread():
+  if request.method =='POST':
+    id=request.form['id']
+    status=request.form['status']
+    sql="Update complaints SET status=%s WHERE idComplaints=%s"
+    val=(status,id)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return redirect('/viewcomplaints')
+##############################################################################################  
+@app.route('/equipments')  
+def equip():
+  mycursor.execute("SELECT * FROM equipments")
+  r=mycursor.fetchall()
+  return render_template('viewequipments.html',msg=r)
+##################################################################################################
+@app.route('/dev_added',methods=['POST','GET'])
+def addeq():
+  if request.method =='POST':
+    name=request.form['name']
+    serialn=request.form['sn']
+    companyn=request.form['cn']
+    roomn=request.form['rn']
+    stat=request.form['stat']
+    #serialn=int(serialn)
+    
+    sql="INSERT INTO equipments (serialN,device_name,company_number,room_number,status)Values(%s,%s,%s,%s,%s)"
+    val=(serialn,name,companyn,roomn,stat)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return redirect('/equipments') 
+@app.route('/dev_status',methods=['POST','GET'])
+def changes():
+  if request.method =='POST':
+    # name=request.form['name']
+    serialn=request.form['s']
+    stat=request.form['stat2']
+    sql="Update equipments SET status=%s WHERE serialN=%s"
+    val=(stat,serialn)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return redirect('/equipments')
+#####################################################################################################################################################################################
+    
+    
   
-       
+  
   
 
 if __name__=='__main__':
