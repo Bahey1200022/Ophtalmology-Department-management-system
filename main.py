@@ -13,7 +13,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="palmhome",
+  passwd="canyouseeme",
   database="optha"
 )
 
@@ -343,7 +343,7 @@ def equip():
   mycursor.execute("SELECT * FROM devices")
   r=mycursor.fetchall()
   return render_template('viewequipments.html',msg=r)
-##################################################################################################
+####################################################################################################
 @app.route('/dev_added',methods=['POST','GET'])
 def addeq():
   if request.method =='POST':
