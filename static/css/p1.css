@@ -52,11 +52,7 @@ body {
     }
 }
 
-.text{
-  color:#003366 ;
- font-weight: 500;
- font-size:430px;
-}
+
 
 footer{
     background: linear-gradient(to top left, #003366 32%, #336699 68%);
