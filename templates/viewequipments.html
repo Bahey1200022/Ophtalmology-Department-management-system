@@ -95,7 +95,6 @@
         <th scope="col"> serial number</th>
         <th scope="col">device name</th>
         <th scope="col">company number</th>
-        <th scope="col">room number</th>
         <th scope="col">status</th>
         
         </tr>
@@ -107,7 +106,7 @@
             <td><h6>{{d.1}}</h6></td>
             <td><h6>{{d.2}}</h6></td>
             <td><h6>{{d.3}}</h6></td>
-            <td><h6>{{d.4}}</h6></td>
+            
             
         </tr>
         {% endfor %}
@@ -125,8 +124,6 @@
         <input type="etxt" id="lname" name="sn"><br>
         <label for="date">company number</label><br>
         <input type="text" id="date" name="cn"><br>
-        <label for="id">room number</label><br>
-        <input type="number" id="id" name="rn"><br>
         <label for="dr">status</label><br>
         <input type="text" id="dr" name="stat"><br>
        
@@ -137,7 +134,7 @@
     <div class="row">
         <div class="col-lg text-center">
   <h5 id="2">Update status:<h5>
-    <form action ="http://127.0.0.1:5000/dev_status" method ="POST">
+    <form action ="/dev_status"  method="POST">
         <label for="n">serial number</label><br>
         <input type="text" id="lname" name="s"><br>
         <label for="dr">status</label><br>
@@ -145,5 +142,16 @@
        
         <button class="w-20 btn btn-lg btn-primary" type="submit">CHANGE</button>
     </div></div></div>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg text-center">
+    <h5 id="2">Delete :<h5>
+      <form action ="/deleteequip" method ="POST">
+          <label for="n">Name</label><br>
+          <input type="text" id="lname" name="s"><br>
+         
+         
+          <button class="w-20 btn btn-lg btn-primary" type="submit">DELETE</button>
+      </div></div></div>
 </body>
 </html>

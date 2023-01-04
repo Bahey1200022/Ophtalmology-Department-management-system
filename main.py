@@ -333,10 +333,11 @@ def complainread():
     mycursor.execute(sql,val)
     mydb.commit()
     return redirect('/viewcomplaints')
+  ######################################################################################
 ##############################################################################################  
 @app.route('/equipments')  
 def equip():
-  mycursor.execute("SELECT * FROM equipments")
+  mycursor.execute("SELECT * FROM devices")
   r=mycursor.fetchall()
   return render_template('viewequipments.html',msg=r)
 ##################################################################################################
@@ -346,28 +347,40 @@ def addeq():
     name=request.form['name']
     serialn=request.form['sn']
     companyn=request.form['cn']
-    roomn=request.form['rn']
     stat=request.form['stat']
-    #serialn=int(serialn)
-    
-    sql="INSERT INTO equipments (serialN,device_name,company_number,room_number,status)Values(%s,%s,%s,%s,%s)"
-    val=(serialn,name,companyn,roomn,stat)
+    sql="INSERT INTO devices (serialn,name,conum,status)Values(%s,%s,%s,%s)"
+    val=(serialn,name,companyn,stat)
     mycursor.execute(sql,val)
     mydb.commit()
     return redirect('/equipments') 
+##############################################################################################################################  
 @app.route('/dev_status',methods=['POST','GET'])
 def changes():
   if request.method =='POST':
-    # name=request.form['name']
     serialn=request.form['s']
     stat=request.form['stat2']
-    sql="Update equipments SET status=%s WHERE serialN=%s"
-    val=(stat,serialn)
-    mycursor.execute(sql,val)
+    sql1="Update devices SET status=%s WHERE serialn=%s"
+    val1=(stat,serialn)
+    mycursor.execute(sql1,val1)
     mydb.commit()
+    mycursor.execute("SELECT * FROM devices")
+    r=mycursor.fetchall()
+    return render_template('viewequipments.html',msg=r)
+  else:
     return redirect('/equipments')
 #####################################################################################################################################################################################
-    
+@app.route('/deleteequip',methods =['POST','GET'])
+def delequipment():
+  if request.method =='POST':
+    x=request.form['s']
+    sql2="DELETE FROM devices WHERE name=%s"
+    val2=[x]
+    mycursor.execute(sql2,val2)
+    mydb.commit()
+    return redirect('/equipments')
+  else:
+    return redirect('/equipments')    
+###################################################################3333  
     
   
   
