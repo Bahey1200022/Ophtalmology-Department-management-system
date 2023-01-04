@@ -13,7 +13,7 @@ Session(app)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="canyouseeme",
+  passwd="palmhome",
   database="optha"
 )
 
@@ -38,11 +38,11 @@ def loginDr():
         if r==None:
           return render_template('doctorslogin.html')
         k=r[1]
-        sql12 ="SELECT patientFname,PatientLname,Adate,Pid,status FROM appointments WHERE (Doctor =%s)"
+        sql12 ="SELECT patientFname,PatientLname,Adate,Pid,status,DOB,disease,gender FROM appointments WHERE (Doctor =%s)"
         val12=[k]
         mycursor.execute(sql12, val12)
         patients=mycursor.fetchall()
-        sql13 ="SELECT PFname,PLname,oldAdate,oldPid,old_status FROM old_appointment WHERE (DR =%s)"
+        sql13 ="SELECT PFname,PLname,oldAdate,oldPid,old_status,DOBold,gender,diseases FROM old_appointment WHERE (DR =%s)"
         val13=[k]
         mycursor.execute(sql13, val13)
         oldappointments=mycursor.fetchall()
@@ -116,8 +116,8 @@ def appoint():
       x=request.form['doctor']
       y=request.form['date']
       z=request.form['stat']
-      sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid,status)Values(%s,%s,%s,%s,%s,%s)"
-      val3=(f[0],y,x,f[1],f[2],z)
+      sql3="Insert into appointments(patientFname,Adate,Doctor,PatientLname,Pid,status,DOB,disease,gender)Values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+      val3=(f[0],y,x,f[1],f[2],z,f[6],f[11],f[5])
       mycursor.execute(sql3, val3)
       mydb.commit()
       sql4="UPDATE patients SET AssignedDr=%s WHERE PID=%s"
@@ -206,7 +206,7 @@ def admin():
  ##############################################################################################################################################################################     
 @app.route('/view_appointments')
 def viewapp():
-  mycursor.execute("SELECT * FROM appointments")
+  mycursor.execute("SELECT patientFname,Adate,Doctor,PatientLname,Pid,status FROM appointments")
   data=mycursor.fetchall()
   return render_template('admin.html',msg=data)
   
@@ -220,6 +220,9 @@ def complete():
     pid=request.form['id']
     dr=request.form['dr']
     s=request.form['stat']
+    # sex=request.form['id']
+    # dob=request.form['dr']
+    # disease=request.form['stat']
     sql2="Delete from appointments WHERE (patientFname=%s) "
     val2=[fname]
     mycursor.execute(sql2, val2)
@@ -282,7 +285,7 @@ def nurseadd():
     ssn=request.form['ssn']
     number=request.form['number']
     sql="INSERT INTO nurses(NName,Gender,SSN,Birthdate,salary,phoneN)Values(%s,%s,%s,%s,%s,%s)"
-    val=(fname,g,date,salary,ssn,number)
+    val=(fname,g,ssn,date,salary,number)
     mycursor.execute(sql,val)
     mydb.commit()
     # mycursor.execute("SELECT * FROM nurses")
