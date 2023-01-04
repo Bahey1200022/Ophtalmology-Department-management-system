@@ -81,35 +81,31 @@
     </ul>
    </div>
 </nav>
-
-
-
-
-<h5 class="f">Old appointments :</h5>
       <table class="table" id="2">
         <thead class="thead-light">
           <tr>
-        <th scope="col">patientFname</th>
-        <th scope="col">PatientLname</th>
-        <th scope="col">Adate</th>
-        <th scope="col">Pid</th>
+        <th scope="col">Patient's First name</th>
+        <th scope="col">Patient's Last name</th>
+        <th scope="col">Old Appointment date</th>
+        <th scope="col">Patient's ID</th>
         <th scope="col">Status</th>
-        <th scope="col">Dr.</th>
-
+        <th scope="col">Dr's Name</th>
         </tr>
       </thead>
       <tbody>
         {% for d in data %}
         <tr>
-            <td><h5>{{d.0}}</h5></td>
-            <td><h5>{{d.3}}</h5></td>
-            <td><h5>{{d.1}}</h5></td>
-            <td><h5>{{d.4}}</h5></td>
-            <td><h5>{{d.5}}</h5></td>
-            <td><h5>{{d.2}}</h5></td>
+            <td><h6>{{d.0}}</h6></td>
+            <td><h6>{{d.3}}</h6></td>
+            <td><h6>{{d.1}}</h6></td>
+            <td><h6>{{d.4}}</h6></td>
+            <td><h6>{{d.5}}</h6></td>
+            <td><h6>{{d.2}}</h6></td>
         </tr>
         {% endfor %}
     </tbody>
   </table>
+  <br>
+  <hr>
 </body>
 </html>

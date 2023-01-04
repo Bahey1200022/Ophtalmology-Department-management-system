@@ -72,9 +72,9 @@ form {
               <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Home</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/aboutus">About us</a></li>
-                  <li><a class="dropdown-item" href="/prices">prices</a></li>
+                  <li><a class="dropdown-item" href="#">prices</a></li>
                   <li><a class="dropdown-item" href="#">FAQ</a></li>
-                  <li><a class="dropdown-item" href="/doctors">Our Team</a></li>
+                  <li><a class="dropdown-item" href="#">Our Team</a></li>
                 </ul>
       
           </li>
@@ -88,84 +88,14 @@ form {
               <a href="#fat" class="nav-link">services</a>
           </li>
           <li class="nav-item active">
-              <a href="#" class="nav-link">for complaints</a>
+              <a href="/complaints" class="nav-link">for complaints</a>
           </li>
        </ul>
       </div>
    </nav> 
    <br>
    
-   <form action ="http://127.0.0.1:5000/complaints" method ="POST">
-    <div class="container">
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" input required>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="passw" input required>
-      </div>
-    </div>
-    <fieldset class="form-group ">
-      <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Did the services meet your expectation?</legend>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="inlineRadios" id="inlineRadios1" value="option1" checked>
-            <label class="form-check-label" for="inlineRadios1">
-              Yes
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="inlineRadios" id="inlineRadios2" value="option2">
-            <label class="form-check-label" for="inlineRadios2">
-              No
-            </label>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset class="form-group">
-      <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Overall satisfaction? : Doctor's knowlegde/ waiting time/ Hygiene</legend>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            <label class="form-check-label" for="gridRadios1">
-             satisfied
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-            <label class="form-check-label" for="gridRadios2">
-              unsatisfied
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-            <label class="form-check-label" for="gridRadios3">
-              neutral
-            </label>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <div class="form-group ">
-      <label for="exampleFormControlTextarea1">What else would you like to see added to your services?</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text" input required></textarea>
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button type="submit"  class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-
-<br>
+   <br>
     
     <footer class="text-white text-center text-lg-start bg-primary" style="background: linear-gradient(to top left, #003366 32%, #336699 68%)">
       <div class="container p-4">

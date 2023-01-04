@@ -80,44 +80,50 @@
 <table class="table" id="2">
     <thead class="thead-light">
       <tr>
-        <th scope="col">patientFname</th>
-        <th scope="col">PatientLname</th>
-        <th scope="col">Adate</th>
-        <th scope="col">Pid</th>
+        <th scope="col">patient First name</th>
+        <th scope="col">Patient Last name</th>
+        <th scope="col">Appointment date</th>
+        <th scope="col">patient's ID</th>
         <th scope="col">Status</th>
-        <th scope="col">Dr.</th>
+        <th scope="col">Dr's Name</th>
 
     </tr>
   </thead>
   <tbody>
     {% for d in msg%}
     <tr>
-        <td><h5>{{d.0}}</h5></td>
-        <td><h5>{{d.3}}</h5></td>
-        <td><h5>{{d.1}}</h5></td>
-        <td><h5>{{d.4}}</h5></td>
-        <td><h5>{{d.5}}</h5></td>
-        <td><h5>{{d.2}}</h5></td>
+        <td><h6>{{d.0}}</h6></td>
+        <td><h6>{{d.3}}</h6></td>
+        <td><h6>{{d.1}}</h6></td>
+        <td><h6>{{d.4}}</h6></td>
+        <td><h6>{{d.5}}</h6></td>
+        <td><h6>{{d.2}}</h6></td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
-<hr size="100%" width="100%" color="black">
-<h5>Mark it complete:<h5>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-lg text-center">
+<h5>Mark it complete:<h5><br>
     <form action ="http://127.0.0.1:5000/appointment_marked" method ="POST">
-        <label for="Pfname">patientFname:</label><br>
+        <label for="Pfname">Patient's First name:</label><br>
         <input type="text" id="fname" name="Pfname"><br>
-        <label for="Plname">PatientLname</label><br>
+        <label for="Plname">Patient's Last name</label><br>
         <input type="text" id="lname" name="Plname"><br>
-        <label for="date">Adate</label><br>
+        <label for="date">Upcoming Appointment date</label><br>
         <input type="text" id="date" name="date"><br>
-        <label for="id">PID</label><br>
+        <label for="id">Patients's ID</label><br>
         <input type="number" id="id" name="id"><br>
-        <label for="dr">DR</label><br>
+        <label for="dr">Doctor's Name</label><br>
         <input type="text" id="dr" name="dr"><br>
-        <label for="stat">status</label><br>
+        <label for="stat">Status</label><br>
         <input type="text" id="stat" name="stat"><br>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">DONE</button>
-
+        <button class="w-20 btn btn-lg btn-primary " type="submit">DONE</button>
+    </form>
+</div>
+</div>
+</div>
 </body>
 </html>
