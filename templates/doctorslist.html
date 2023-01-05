@@ -128,7 +128,7 @@
 <br><hr>
 <div class="container">
 <div class="row">
-    <div class="col-lg text-center">
+    <div class="col-lg-6 text-center">
 <h5 id="2">Add Doctor:<h5>
 <form action ="http://127.0.0.1:5000/doctor_added" method ="POST">
     <label for="Pfname">doctor's Name</label><br>
@@ -150,6 +150,16 @@
     <label for="stat">Addresss</label><br>
     <input type="text" id="stat" name="ad"><br>
     <button class="w-20 btn btn-lg btn-primary" type="submit">ADD</button>
-</div></div></div>
+</div>
+<div class="col-lg-6 text-center">
+    <h5 id="2">Remove Doctor:<h5>
+    <form action ="http://127.0.0.1:5000/doctor_added" method ="POST">
+        <label for="Pfname">doctor's Name</label><br>
+        <input type="text" id="fname" name="Pfname"><br>
+        <label for="dr">SSN</label><br>
+        <input type="text" id="dr" name="ssn"><br>
+        <button class="w-20 btn btn-lg btn-primary" type="submit">Remove</button>
+    </div>
+</div></div>
 </body>
 </html>
